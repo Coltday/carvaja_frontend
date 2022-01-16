@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TarjetasService {
+  private API_SERVER="http://localhost:8080/tarjeta/"
+  constructor(
+    private httpClient: HttpClient
+
+
+  ) { }
+    public getAllTarjetas():Observable<any> {
+      return this.httpClient.get(this.API_SERVER);
+    }
+
+    public saveTarjeta(tarjeta:any):Observable<any>{
+      return this.httpClient.post(this.API_SERVER,tarjeta);
+    }
+
+
+}
