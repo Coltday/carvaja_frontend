@@ -4,8 +4,9 @@
     <form [formGroup]="tarjetaForm" (ngSumit)="guardar()">
         <div class="forme-group">
             <label>Cliente: </label>
-            <select name="cliente" id="clientes" formControlName="cliente" class="form-control"></select>
-            <option value="item.Id" *ngFor="let item of clientes">{{item.Id}}</option>
+            <select name="cliente" id="cliente" formControlName="cliente" class="form-control">
+                <option [ngValue]="item.id" *ngFor="let item of clientes">{{item.id}}</option>
+            </select>
         </div>
         <div class="forme-group">
             <label>Numero de tarjeta: </label>
@@ -29,6 +30,6 @@
             <input type="number" formControlName='codigo' class="form-control">
         </div>
 
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="tarjetaForm.invalid">Guardar</button>
     </form>
 </div>

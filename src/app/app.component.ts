@@ -27,37 +27,17 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
 
-  this.tarjetasForm=this.fb.group({
-  numero : ['', Validators.required],
-  cliente : ['', Validators.required],
-  anho : ['', Validators.required],
-  mes : ['', Validators.required],
-  codigo : ['', Validators.required],
-  
 
 
-});;
-this.clienteService.getAllCliente().subscribe(resp=>{
-this.cliente= resp;
-
-},
-error => {console.log(error)}
-)
-
-    }
-
-guardar():void{
-  // this.tarjetasService.saveTarjeta(this.tarjetasForm.value).subscribe(resp=>{
-
-  // },
-  // error=> {console.error()}
-  
-  // )
 
 }
 
 
+    }
 
-  }
+
+
+
+
 
 
